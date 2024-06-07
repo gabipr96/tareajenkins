@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh '''
                 echo "Building..."
-                docker build -t jluisalvarez/flask_app:$TAG .
+                docker build -t gabipr/flask_app:$TAG .
                 '''
             }
         }
@@ -21,7 +21,7 @@ pipeline {
                     sh '''
                         echo "Publishing..."
                         docker login -u="${USERNAME}" -p="${PASSWORD}"
-                        docker push jluisalvarez/flask_app:$TAG
+                        docker push gabipr/flask_app:$TAG
                     ''' 
                 
                 }
